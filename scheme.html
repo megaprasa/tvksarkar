@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TVK தேர்தல் அறிக்கை 2026 — நலத்திட்டங்கள் | TVK திருச்சிராப்பள்ளி மாவட்டம்</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;600;700;800;900&family=Hind+Madurai:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#c41e24;
+    --red-deep:#8f1116;
+    --gold:#f0b429;
+    --gold-deep:#c98f0f;
+    --ink:#241a0d;
+    --cream:#fff8ea;
+    --grey:#7a6f5c;
+    --line:rgba(36,26,13,0.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--cream);color:var(--ink);font-family:'Hind Madurai', sans-serif;overflow-x:hidden;}
+  h1,h2,h3,.display{font-family:'Catamaran', sans-serif;font-weight:800;letter-spacing:-0.01em;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;}
+  [lang-en]{display:none;}
+  body.lang-en [lang-ta]{display:none;}
+  body.lang-en [lang-en]{display:inline;}
+  body.lang-en [lang-en].block{display:block;}
+
+  .flagbar{height:6px;display:flex;}
+  .flagbar span{flex:1;}
+  .flagbar .r{background:var(--red);}
+  .flagbar .g{background:var(--gold);}
+
+  .page-hero{position:relative;padding:64px 24px 56px;background:linear-gradient(135deg,var(--red-deep),var(--red));color:#fff;overflow:hidden;}
+  .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 800px 400px at 90% -10%, rgba(240,180,41,0.25), transparent 60%);pointer-events:none;}
+  .page-hero-inner{max-width:1180px;margin:0 auto;position:relative;z-index:1;}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:16px;}
+  .eyebrow::before{content:'';width:22px;height:2px;background:var(--gold);display:inline-block;flex-shrink:0;}
+  .page-hero h1{font-size:clamp(24px,5.4vw,42px);line-height:1.18;max-width:840px;}
+  .page-hero p{margin-top:16px;max-width:680px;color:rgba(255,255,255,0.85);font-size:clamp(14px,2.4vw,15.5px);line-height:1.7;font-weight:300;}
+
+  section{padding:64px 24px;}
+  .wrap{max-width:1180px;margin:0 auto;}
+
+  /* Sector filter chips */
+  .chip-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px;}
+  .chip{
+    padding:8px 16px;border-radius:20px;font-size:13px;font-weight:600;
+    background:#fff;border:1px solid var(--line);color:var(--grey);
+  }
+
+  /* ===== Table section ===== */
+  .table-section{background:#fff;border:1px solid var(--line);border-radius:6px;padding:36px;box-shadow:0 12px 28px rgba(36,26,13,0.06);overflow-x:auto;}
+  .table-section h3{color:var(--red-deep);font-size:clamp(19px,3.4vw,23px);margin-bottom:22px;padding-bottom:12px;border-bottom:2px solid var(--gold);}
+
+  table.tvk-table{width:100%;border-collapse:collapse;min-width:640px;}
+  table.tvk-table caption{caption-side:bottom;text-align:left;padding-top:16px;font-size:12.5px;color:var(--grey);}
+  table.tvk-table thead th{
+    background:var(--red);color:#fff;
+    text-align:left;padding:14px 18px;
+    font-family:'Catamaran',sans-serif;font-weight:700;font-size:13.5px;
+    letter-spacing:0.03em;
+  }
+  table.tvk-table thead th:first-child{border-top-left-radius:4px;}
+  table.tvk-table thead th:last-child{border-top-right-radius:4px;}
+  table.tvk-table tbody td{
+    padding:13px 18px;font-size:14.5px;line-height:1.6;
+    border-bottom:1px solid var(--line);
+    vertical-align:top;
+  }
+  table.tvk-table tbody td.sector-cell{
+    font-weight:700;color:var(--red-deep);white-space:nowrap;width:190px;
+    border-left:4px solid var(--gold);
+  }
+  table.tvk-table tbody td.scheme-cell{font-weight:600;width:230px;}
+  table.tvk-table tbody tr:nth-child(even){background:var(--cream);}
+  table.tvk-table tbody tr:hover{background:rgba(240,180,41,0.12);}
+  table.tvk-table tbody tr:last-child td{border-bottom:none;}
+
+  .foot-note{
+    background:#fff;border:1px dashed var(--line);border-radius:4px;padding:22px;margin-top:32px;
+    font-size:13.5px;color:var(--grey);line-height:1.7;word-break:break-word;
+  }
+  .foot-note strong{color:var(--ink);}
+
+  /* ===== Responsive breakpoints ===== */
+  @media (max-width:1024px){
+    .wrap{max-width:100%;}
+  }
+  @media (max-width:860px){
+    section{padding:52px 20px;}
+    .table-section{padding:26px 20px;}
+  }
+  @media (max-width:680px){
+    .page-hero{padding:52px 20px 44px;}
+    table.tvk-table thead th, table.tvk-table tbody td{padding:11px 14px;font-size:13.5px;}
+  }
+  @media (max-width:600px){
+    .page-hero{padding:44px 16px 36px;}
+    section{padding:40px 16px;}
+    table.tvk-table tbody td.sector-cell{width:130px;}
+    table.tvk-table tbody td.scheme-cell{width:170px;}
+  }
+  @media (max-width:480px){
+    .eyebrow{font-size:11.5px;margin-bottom:12px;}
+    .foot-note{padding:18px;font-size:12.5px;}
+    .table-section{padding:20px 14px;}
+  }
+  @media (max-width:380px){
+    .page-hero h1{font-size:22px;}
+    .page-hero p{font-size:13.5px;}
+  }
+</style>
+</head>
+<body>
+
+<div id="navbar-placeholder"></div>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <span class="eyebrow"><span lang-ta>TVK தேர்தல் அறிக்கை 2026</span><span lang-en>TVK Election Manifesto 2026</span></span>
+    <h1><span lang-ta>தமிழக வெற்றிக் கழகம் அறிவித்த முக்கிய நலத்திட்டங்கள்</span><span lang-en>Key Welfare Schemes Announced by TVK</span></h1>
+    <p>
+      <span lang-ta>ஏப்ரல் 16, 2026 அன்று தமிழக வெற்றிக் கழகம் (TVK) வெளியிட்ட தேர்தல் அறிக்கையில், பெண்கள், விவசாயிகள், மாணவர்கள், மூத்த குடிமக்கள், அரசு ஊழியர்கள் மற்றும் வேலைவாய்ப்பு ஆகிய துறைகளுக்கான முக்கிய வாக்குறுதிகள் அறிவிக்கப்பட்டன.</span>
+      <span lang-en>TVK released its election manifesto on 16 April 2026, announcing key welfare promises across women's welfare, agriculture, education, senior citizens, government employees, and employment.</span>
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+
+    <div class="table-section">
+      <h3><span lang-ta>TVK நலத்திட்டங்கள் — துறை வாரியாக</span><span lang-en>TVK Welfare Schemes — Sector-wise</span></h3>
+      <table class="tvk-table">
+        <thead>
+          <tr>
+            <th><span lang-ta>துறை</span><span lang-en>Sector</span></th>
+            <th><span lang-ta>திட்டம்</span><span lang-en>Scheme</span></th>
+            <th><span lang-ta>விவரம்</span><span lang-en>Detail</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="sector-cell"><span lang-ta>பெண்கள் நலன்</span><span lang-en>Women's Welfare</span></td>
+            <td class="scheme-cell"><span lang-ta>மாத உதவித்தொகை</span><span lang-en>Monthly Assistance</span></td>
+            <td>60 <span lang-ta>வயதுக்கு உட்பட்ட குடும்பத் தலைமைப் பெண்களுக்கு மாதம் ₹2,500 நேரடி வங்கிக் கணக்கு உதவி.</span><span lang-en>years and below household head women get ₹2,500 per month direct bank transfer.</span></td>
+          </tr>
+          <tr>
+            <td class="sector-cell"><span lang-ta>பெண்கள் நலன்</span><span lang-en>Women's Welfare</span></td>
+            <td class="scheme-cell"><span lang-ta>சுய உதவிக் குழு கடன்</span><span lang-en>SHG Loans</span></td>
+            <td><span lang-ta>பெண்கள் தலைமையிலான சுய உதவிக் குழுக்களுக்கு ₹5 லட்சம் வரை வட்டியில்லாக் கடன்.</span><span lang-en>Interest-free loans up to ₹5 lakh for women-led self-help groups.</span></td>
+          </tr>
+          <tr>
+            <td class="sector-cell"><span lang-ta>பெண்கள் நலன்</span><span lang-en>Women's Welfare</span></td>
+            <td class="scheme-cell"><span lang-ta>மணப் பரிசு</span><span lang-en>Marriage Assistance</span></td>
+            <td><span lang-ta>ஆண்டு வருமானம் ₹5 லட்சத்திற்குக் குறைவான குடும்பப் பெண்களுக்கு 8 கிராம் தங்கத் தாலி மற்றும் பட்டுப் புடவை.</span><span lang-en>8 grams gold thali and silk saree for brides from families earning under ₹5 lakh/year.</span></td>
+          </tr>
+          <tr>
+            <td class="sector-cell"><span lang-ta>பெண்கள் நலன்</span><span lang-en>Women's Welfare</span></td>
+            <td class="scheme-cell"><span lang-ta>இலவச பேருந்து பயணம்</span><span lang-en>Free Bus Travel</span></td>
+            <td><span lang-ta>தமிழ்நாடு முழுவதும் அரசு பேருந்துகளில் பெண்களுக்கு மாவட்டங்களுக்கு இடையேயும் இலவச பயணம்.</span><span lang-en>Free travel for women on all government buses statewide, including inter-district.</span></td>
+          </tr>
+          <tr>
+            <td class="sector-cell"><span lang-ta>எரிசக்தி / அடிப்படை வசதி</span><span lang-en>Energy & Basic Amenities</span></td>
+            <td class="scheme-cell"><span lang-ta>இலவச மின்சாரம்</span><span lang-en>Free Electricity</span></td>
+            <td><span lang-ta>ஒவ்வொரு வீட்டிற்கும் மாதம் 200 யூனிட் வரை இலவச மின்சாரம்.</span><span lang-en>200 units of free electricity per household every month.</span></td>
+          </tr>
+          <tr>
+            <td class="sector-cell"><span lang-ta>எரிசக்தி / அடிப்படை வசதி</span><span lang-en>Energy & Basic Amenities</span></td>
+            <td class="scheme-cell"><span lang-ta>இலவச கேஸ் சிலிண்டர்</span><span lang-en>Free LPG Cylinders</span></td>
+            <td><span lang-ta>ஒவ்வொரு குடும்பத்திற்கும் ஆண்டுக்கு 6 இலவச சமையல் எரிவாயு சிலிண்டர்கள்.</span><span lang-en>6 free cooking gas cylinders per household every year.</span></td>
+          </tr>
+          <tr>
+            <td class="sector-cell"><span lang-ta>கல்வி</span><span lang-en>Education</span></td>
+            <td class="scheme-cell"><span lang-ta>காமராஜர் தரம் பள்ளிகள்</span><span lang-en>Kamarajar Model Schools</span></td>
+            <td><span lang-ta>அனைத்து மாவட்டங்களிலும் 6 முதல் 12ஆம் வகுப்பு வரை 100 உறைவிடப் பள்ளிகள்.</span><span lang-en>100 residential schools for Classes 6–12 across all districts.</span></td>
+          </tr>
+          <tr>
+            <td class="sector-cell"><span lang-ta>கல்வி</span><span lang-en>Education</span></td>
+            <td class="scheme-cell"><span lang-ta>கல்விக் கடன் உத்தரவாதம்</span><span lang-en>Education Loan Guarantee</span></td>
+            <td><span lang-ta>இளங்கலை முதல் பிஎச்.டி வரை ₹20 லட்சம் வரை பிணையில்லாக் கல்விக் கடன்.</span><span lang-en>Collateral-free education loans up to ₹20 lakh from undergraduate to PhD level.</span></td>
+          </tr>
+          <tr>
+            <td class="sector-cell"><span lang-ta>கல்வி</span><span lang-en>Education</span></td>
+            <td class="scheme-cell"><span lang-ta>தாய்மார் உதவித்தொகை</span><span lang-en>Mother's Allowance</span></td>
+            <td><span lang-ta>1 முதல் 12ஆம் வகுப்பு வரை படிக்கும் பிள்ளைகளின் தாய்மார்களுக்கு ஆண்டுக்கு ₹15,000.</span><span lang-en>₹15,000 per year for mothers of children studying in Classes 1–12.</span></td>
+          </tr>
+          <tr>
+            <td class="sector-cell"><span lang-ta>விவசாயம்</span><span lang-en>Agriculture</span></td>
+            <td class="scheme-cell"><span lang-ta>விவசாய முதலீட்டு உதவி</span><span lang-en>Farmer Investment Assistance</span></td>
+            <td><span lang-ta>நில உரிமையுள்ள விவசாயிகளுக்கு ஆண்டுக்கு ₹15,000 மற்றும் பயிர்க் கடன் தள்ளுபடி.</span><span lang-en>₹15,000/year for land-owning farmers plus complete crop loan waiver.</span></td>
+          </tr>
+          <tr>
+            <td class="sector-cell"><span lang-ta>விவசாயம்</span><span lang-en>Agriculture</span></td>
+            <td class="scheme-cell"><span lang-ta>குறைந்தபட்ச ஆதார விலை</span><span lang-en>Minimum Support Price</span></td>
+            <td><span lang-ta>நெல்லுக்கு குவிண்டால் ₹3,000, கரும்புக்கு டன் ₹4,500 மற்றும் 5 லட்சம் சூரிய மின் பம்புகள்.</span><span lang-en>₹3,000/quintal for paddy, ₹4,500/tonne for sugarcane, plus 5 lakh solar pumps.</span></td>
+          </tr>
+          <tr>
+            <td class="sector-cell"><span lang-ta>மீனவர் நலன்</span><span lang-en>Fisherfolk Welfare</span></td>
+            <td class="scheme-cell"><span lang-ta>பருவகால உதவி</span><span lang-en>Lean Season Assistance</span></td>
+            <td><span lang-ta>மீன்பிடி தடை காலத்தில் ₹27,000 உதவி, ஆதார விலை மற்றும் ₹25 லட்சம் விபத்துக் காப்பீடு.</span><span lang-en>₹27,000 during the fishing ban period, MSP for fish, and ₹25 lakh accident insurance.</span></td>
+          </tr>
+          <tr>
+            <td class="sector-cell"><span lang-ta>சமூக பாதுகாப்பு</span><span lang-en>Social Security</span></td>
+            <td class="scheme-cell"><span lang-ta>மூத்த குடிமக்கள் ஓய்வூதியம்</span><span lang-en>Senior Citizens Pension</span></td>
+            <td><span lang-ta>மூத்த குடிமக்கள், விதவைகள் மற்றும் மாற்றுத்திறனாளிகளுக்கு மாதம் ₹3,000 ஓய்வூதியம்.</span><span lang-en>₹3,000/month pension for senior citizens, widows, and persons with disabilities.</span></td>
+          </tr>
+          <tr>
+            <td class="sector-cell"><span lang-ta>வேலைவாய்ப்பு</span><span lang-en>Employment</span></td>
+            <td class="scheme-cell"><span lang-ta>வேலையில்லா ஊதியம்</span><span lang-en>Unemployment Aid</span></td>
+            <td><span lang-ta>பட்டதாரிகளுக்கு ₹4,000, டிப்ளமோ படித்தவர்களுக்கு ₹2,500 மற்றும் 5 லட்சம் புதிய அரசு வேலைகள்.</span><span lang-en>₹4,000 for graduates, ₹2,500 for diploma holders, plus 5 lakh new government jobs.</span></td>
+          </tr>
+          <tr>
+            <td class="sector-cell"><span lang-ta>அரசு ஊழியர்கள்</span><span lang-en>Govt. Employees</span></td>
+            <td class="scheme-cell"><span lang-ta>ஊழியர் நல உறுதிமொழி</span><span lang-en>Employee Welfare Guarantee</span></td>
+            <td><span lang-ta>பழைய ஓய்வூதியத் திட்டம் மறு ஆய்வு, ஒப்பந்த ஊழியர் நிரந்தரமாக்கல், அங்கன்வாடி ஊழியர்களுக்கு ₹18,000 ஊதியம்.</span><span lang-en>Review of Old Pension Scheme, regularisation of contract staff, ₹18,000 salary for Anganwadi workers.</span></td>
+          </tr>
+          <tr>
+            <td class="sector-cell"><span lang-ta>ஆட்சி / தொழில்நுட்பம்</span><span lang-en>Governance & Tech</span></td>
+            <td class="scheme-cell"><span lang-ta>AI நகரம் & பல்கலைக்கழகம்</span><span lang-en>AI City & University</span></td>
+            <td><span lang-ta>தனி செயற்கை நுண்ணறிவு அமைச்சகம், AI நகரம் மற்றும் AI பல்கலைக்கழகம் அமைத்தல்.</span><span lang-en>Dedicated Ministry for AI, AI City, and AI University.</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="foot-note">
+      <span lang-ta><strong>குறிப்பு:</strong> இந்த அட்டவணையில் உள்ள தகவல்கள் TVK வெளியிட்ட தேர்தல் அறிக்கை (ஏப்ரல் 16, 2026) அடிப்படையிலான பொதுத் தகவல் சுருக்கம். முழுமையான உத்தரவாதங்களுக்கு அதிகாரப்பூர்வ அறிக்கையைப் பார்வையிடவும்.</span>
+      <span lang-en><strong>Note:</strong> The details in this table are a public summary based on TVK's election manifesto released on 16 April 2026. Please refer to the official manifesto for the complete list of guarantees.</span>
+    </div>
+
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+
+
+<script>
+  fetch('footer.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('footer-placeholder').innerHTML = html;
+      const scripts = document.getElementById('footer-placeholder').querySelectorAll("script");
+      scripts.forEach(oldScript => {
+        const newScript = document.createElement("script");
+        if (oldScript.src) { newScript.src = oldScript.src; }
+        else { newScript.textContent = oldScript.textContent; }
+        document.body.appendChild(newScript);
+        oldScript.remove();
+      });
+    })
+    .catch(err => console.error("Footer load failed:", err));
+</script>
+
+<script>
+ fetch('navbar.html')
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById('navbar-placeholder').innerHTML = html;
+    const scripts = document.getElementById('navbar-placeholder').querySelectorAll("script");
+    scripts.forEach(oldScript => {
+      const newScript = document.createElement("script");
+      if (oldScript.src) { newScript.src = oldScript.src; }
+      else { newScript.textContent = oldScript.textContent; }
+      document.body.appendChild(newScript);
+      oldScript.remove();
+    });
+  })
+  .catch(err => console.error(err));
+</script>
+
+</body>
+</html>

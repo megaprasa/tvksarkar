@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>முதலமைச்சர் விஜய் | TVK திருச்சிராப்பள்ளி மாவட்டம்</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;600;700;800;900&family=Hind+Madurai:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#c41e24;
+    --red-deep:#8f1116;
+    --gold:#f0b429;
+    --gold-deep:#c98f0f;
+    --ink:#241a0d;
+    --cream:#fff8ea;
+    --grey:#7a6f5c;
+    --line:rgba(36,26,13,0.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--cream);color:var(--ink);font-family:'Hind Madurai', sans-serif;overflow-x:hidden;}
+  h1,h2,h3,.display{font-family:'Catamaran', sans-serif;font-weight:800;letter-spacing:-0.01em;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;}
+  [lang-en]{display:none;}
+  body.lang-en [lang-ta]{display:none;}
+  body.lang-en [lang-en]{display:inline;}
+  body.lang-en [lang-en].block{display:block;}
+
+  .flagbar{height:6px;display:flex;}
+  .flagbar span{flex:1;}
+  .flagbar .r{background:var(--red);}
+  .flagbar .g{background:var(--gold);}
+
+  .page-hero{position:relative;padding:64px 24px 56px;background:linear-gradient(135deg,var(--red-deep),var(--red));color:#fff;overflow:hidden;}
+  .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 800px 400px at 90% -10%, rgba(240,180,41,0.25), transparent 60%);pointer-events:none;}
+  .page-hero-inner{max-width:1180px;margin:0 auto;position:relative;z-index:1;}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:16px;}
+  .eyebrow::before{content:'';width:22px;height:2px;background:var(--gold);display:inline-block;flex-shrink:0;}
+  .page-hero h1{font-size:clamp(26px,6vw,46px);line-height:1.15;max-width:800px;}
+  .page-hero p{margin-top:16px;max-width:640px;color:rgba(255,255,255,0.85);font-size:clamp(14px,2.4vw,15.5px);line-height:1.7;font-weight:300;}
+
+  section{padding:64px 24px;}
+  .wrap{max-width:1180px;margin:0 auto;}
+
+  .cm-card{
+    background:#fff;border:1px solid var(--line);border-radius:6px;padding:30px;
+    display:grid;grid-template-columns:140px 1fr;gap:28px;align-items:center;margin-bottom:40px;
+    box-shadow:0 12px 28px rgba(36,26,13,0.06);
+  }
+  .avatar{
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    overflow:hidden;
+    flex-shrink:0;
+    background:none;
+    display:block;
+  }
+  .avatar img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    border-radius:50%;
+  }
+  .cm-card .avatar{width:140px;height:140px;border:4px solid var(--gold);}
+  .cm-card .role{font-size:12.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);font-weight:700;}
+  .cm-card h2{font-size:clamp(20px,4vw,26px);margin-top:6px;color:var(--red-deep);}
+  .cm-card .meta{color:var(--grey);font-size:14.5px;margin-top:6px;}
+
+  /* ===== Profile section ===== */
+  .profile-section{background:#fff;border:1px solid var(--line);border-radius:6px;padding:40px;box-shadow:0 12px 28px rgba(36,26,13,0.06);}
+  .profile-section h3{color:var(--red-deep);font-size:clamp(19px,3.4vw,23px);margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--gold);}
+  .profile-section .block-group{margin-bottom:32px;}
+  .profile-section .block-group:last-child{margin-bottom:0;}
+  .profile-section p{line-height:1.85;font-size:15.5px;color:var(--ink);margin-bottom:12px;}
+  .profile-section p:last-child{margin-bottom:0;}
+
+  .fact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px;}
+  .fact-card{
+    background:var(--cream);border:1px solid var(--line);border-radius:6px;padding:20px 18px;
+    border-left:4px solid var(--red);
+  }
+  .fact-card .label{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-deep);font-weight:700;}
+  .fact-card .value{font-size:15.5px;color:var(--ink);margin-top:6px;font-weight:600;line-height:1.5;}
+
+  .foot-note{
+    background:#fff;border:1px dashed var(--line);border-radius:4px;padding:22px;margin-top:44px;
+    font-size:13.5px;color:var(--grey);line-height:1.7;word-break:break-word;
+  }
+  .foot-note strong{color:var(--ink);}
+
+  /* ===== Responsive breakpoints ===== */
+  @media (max-width:1024px){
+    .wrap{max-width:100%;}
+    .fact-grid{grid-template-columns:repeat(2,1fr);}
+    nav.links{gap:18px;font-size:14px;}
+  }
+  @media (max-width:860px){
+    .cm-card{grid-template-columns:1fr;text-align:center;justify-items:center;padding:26px 22px;}
+    section{padding:52px 20px;}
+    .profile-section{padding:28px 22px;}
+  }
+  @media (max-width:680px){
+    .page-hero{padding:52px 20px 44px;}
+    .lang-toggle button{padding:6px 11px;font-size:11.5px;}
+  }
+  @media (max-width:600px){
+    .fact-grid{grid-template-columns:1fr;}
+    .page-hero{padding:44px 16px 36px;}
+    section{padding:40px 16px;}
+    .cm-card{padding:22px 16px;margin-bottom:36px;}
+    .cm-card .avatar{width:120px;height:120px;}
+    .notice{padding:12px 14px;font-size:13px;}
+  }
+  @media (max-width:480px){
+    .eyebrow{font-size:11.5px;margin-bottom:12px;}
+    .foot-note{padding:18px;font-size:12.5px;}
+    .profile-section{padding:22px 16px;}
+    .profile-section p{font-size:14.5px;}
+  }
+  @media (max-width:380px){
+    .cm-card .avatar{width:100px;height:100px;}
+    .page-hero h1{font-size:24px;}
+    .page-hero p{font-size:13.5px;}
+    .cm-card h2{font-size:19px;}
+  }
+</style>
+</head>
+<body>
+
+<div id="navbar-placeholder"></div>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <span class="eyebrow"><span lang-ta>தமிழ்நாடு அரசு</span><span lang-en>Government of Tamil Nadu</span></span>
+    <h1><span lang-ta>முதலமைச்சர் சி. ஜோசப் விஜய்</span><span lang-en>Chief Minister C. Joseph Vijay</span></h1>
+    <p>
+      <span lang-ta>தமிழக வெற்றிக் கழகம் (TVK) நிறுவனர் மற்றும் தலைவர் விஜய், 2026 தமிழ்நாடு சட்டப்பேரவைத் தேர்தலில் வெற்றி பெற்று, மே 10, 2026 அன்று தமிழ்நாட்டின் 9வது முதலமைச்சராக பதவியேற்றார்.</span>
+      <span lang-en>TVK founder and leader Vijay was sworn in as the 9th Chief Minister of Tamil Nadu on 10 May 2026, after his party's victory in the 2026 Tamil Nadu Legislative Assembly election.</span>
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+
+    <div class="cm-card">
+      <div class="avatar">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV1jrEf5wTVf1eZ6bbMf2GnmkIqddy6pBvCjV-WLcORtjrxFo_4jCDqdQ&s=10" onerror="this.remove()" alt="C. Joseph Vijay">
+      </div>
+      <div>
+        <div class="role"><span lang-ta>முதலமைச்சர், தமிழ்நாடு</span><span lang-en>Chief Minister, Tamil Nadu</span></div>
+        <h2>C. Joseph Vijay</h2>
+        <div class="meta"><span lang-ta>தமிழக வெற்றிக் கழகம் (TVK) · தொகுதி: பெரம்பூர்</span><span lang-en>Tamilaga Vettri Kazhagam (TVK) · Constituency: Perambur</span></div>
+        <div class="meta"><span lang-ta>பதவியேற்பு: மே 10, 2026</span><span lang-en>Sworn in: 10 May 2026</span></div>
+      </div>
+    </div>
+
+    <div class="profile-section">
+      <div class="block-group">
+        <h3><span lang-ta>அறிமுகம்</span><span lang-en>About the Chief Minister</span></h3>
+        <p>
+          <span lang-ta>சந்திரசேகரன் ஜோசப் விஜய் (பிறப்பு: ஜூன் 22, 1974, சென்னை) தமிழ் சினிமாவின் முன்னணி நடிகராகவும், இந்தியாவின் அதிக ஊதியம் பெறும் நட்சத்திரங்களில் ஒருவராகவும் திகழ்ந்தவர். பல தமிழ்நாடு அரசு திரைப்பட விருதுகள் மற்றும் தென்னிந்திய திரையுலக விருதுகளை வென்றுள்ளார்.</span>
+          <span lang-en>Chandrasekaran Joseph Vijay (born 22 June 1974, Chennai) was a leading Tamil cinema actor and among the highest-paid film stars in India, winning multiple Tamil Nadu State Film Awards and South Indian International Movie Awards over his acting career.</span>
+        </p>
+        <p>
+          <span lang-ta>பிப்ரவரி 2024இல் அரசியலில் இறங்குவதாக அறிவித்து, தமிழக வெற்றிக் கழகம் (TVK) கட்சியை நிறுவினார். கட்சியின் தலைவராகவும் முதலமைச்சர் வேட்பாளராகவும் செயல்பட்டு, 2026 சட்டப்பேரவைத் தேர்தலில் TVK-ஐ மிகப்பெரிய கட்சியாக முன்னிலைப்படுத்தினார்.</span>
+          <span lang-en>He announced his entry into politics in February 2024 and founded the Tamilaga Vettri Kazhagam (TVK). As party president and its chief ministerial candidate, he led TVK to emerge as the single largest party in the 2026 assembly election.</span>
+        </p>
+      </div>
+
+      <div class="block-group">
+        <h3><span lang-ta>முதலமைச்சராக பதவியேற்பு</span><span lang-en>Becoming Chief Minister</span></h3>
+        <p>
+          <span lang-ta>2026 தேர்தலில் TVK 234 உறுப்பினர் கொண்ட சட்டப்பேரவையில் அதிக இடங்களை வென்றது. காங்கிரஸ், CPI, CPI(M), VCK மற்றும் IUML ஆகிய கட்சிகளின் ஆதரவுடன் கூட்டணி அரசை அமைத்தார். மே 10, 2026 அன்று சென்னை நேரு உள்ளரங்க விளையாட்டரங்கில் ஆளுநர் ராஜேந்திர அர்லேகர் முன்னிலையில் பதவிப் பிரமாணம் செய்தார்.</span>
+          <span lang-en>TVK won the largest number of seats in the 234-member Assembly in the 2026 election. With the support of the Congress, CPI, CPI(M), VCK, and IUML, Vijay formed a coalition government. He was sworn in by Governor Rajendra Arlekar at the Jawaharlal Nehru Indoor Stadium in Chennai on 10 May 2026.</span>
+        </p>
+        <p>
+          <span lang-ta>1967க்குப் பிறகு திராவிடக் கட்சி அல்லாத ஒரு கட்சியிலிருந்து முதலமைச்சராக பதவியேற்ற முதல் நபர் என்ற வரலாற்று சாதனையை படைத்தார்.</span>
+          <span lang-en>He made history as the first Chief Minister since 1967 to come from a non-Dravidian party.</span>
+        </p>
+      </div>
+
+      <div class="fact-grid">
+        <div class="fact-card">
+          <div class="label"><span lang-ta>பிறந்த தேதி</span><span lang-en>Born</span></div>
+          <div class="value">22 June 1974, <span lang-ta>சென்னை</span><span lang-en>Chennai</span></div>
+        </div>
+        <div class="fact-card">
+          <div class="label"><span lang-ta>கட்சி</span><span lang-en>Party</span></div>
+          <div class="value"><span lang-ta>தமிழக வெற்றிக் கழகம் (TVK)</span><span lang-en>Tamilaga Vettri Kazhagam (TVK)</span></div>
+        </div>
+        <div class="fact-card">
+          <div class="label"><span lang-ta>தொகுதி</span><span lang-en>Constituency</span></div>
+          <div class="value"><span lang-ta>பெரம்பூர்</span><span lang-en>Perambur</span></div>
+        </div>
+        <div class="fact-card">
+          <div class="label"><span lang-ta>கட்சி நிறுவப்பட்டது</span><span lang-en>Party Founded</span></div>
+          <div class="value">2 February 2024</div>
+        </div>
+        <div class="fact-card">
+          <div class="label"><span lang-ta>பதவியேற்பு</span><span lang-en>Sworn In</span></div>
+          <div class="value">10 May 2026</div>
+        </div>
+        <div class="fact-card">
+          <div class="label"><span lang-ta>கல்வி</span><span lang-en>Education</span></div>
+          <div class="value"><span lang-ta>லயோலா கல்லூரி, சென்னை</span><span lang-en>Loyola College, Madras</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot-note">
+      <span lang-ta><strong>குறிப்பு:</strong> இந்தப் பக்கத்தில் உள்ள தகவல்கள் பொது ஆதாரங்களை அடிப்படையாகக் கொண்டவை. அதிகாரப்பூர்வ மற்றும் புதுப்பிக்கப்பட்ட விவரங்களுக்கு tn.gov.in இணையதளத்தை பார்வையிடவும்.</span>
+      <span lang-en><strong>Note:</strong> Information on this page is based on public sources. Please visit tn.gov.in for official and updated details.</span>
+    </div>
+
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+
+
+<script>
+  fetch('footer.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('footer-placeholder').innerHTML = html;
+
+      // Footer script execute
+      const scripts = document
+        .getElementById('footer-placeholder')
+        .querySelectorAll("script");
+
+      scripts.forEach(oldScript => {
+        const newScript = document.createElement("script");
+
+        if (oldScript.src) {
+          newScript.src = oldScript.src;
+        } else {
+          newScript.textContent = oldScript.textContent;
+        }
+
+        document.body.appendChild(newScript);
+        oldScript.remove();
+      });
+    })
+    .catch(err => console.error("Footer load failed:", err));
+</script>
+
+
+<script>
+ fetch('navbar.html')
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById('navbar-placeholder').innerHTML = html;
+
+    // Execute navbar script manually
+    const scripts = document.getElementById('navbar-placeholder').querySelectorAll("script");
+
+    scripts.forEach(oldScript => {
+      const newScript = document.createElement("script");
+
+      if (oldScript.src) {
+        newScript.src = oldScript.src;
+      } else {
+        newScript.textContent = oldScript.textContent;
+      }
+
+      document.body.appendChild(newScript);
+      oldScript.remove();
+    });
+  })
+  .catch(err => console.error(err));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!-- ============================================================
+     TVK Navbar Component
+     Idha ella pages layum <div id="navbar-placeholder"></div> vachu
+     fetch() panni load pannunga. Kீழே "epdi use pannurathu" instructions iruku.
+============================================================ -->
+
+<style>
+  .flagbar{height:6px;display:flex;}
+  .flagbar span{flex:1;}
+  .flagbar .r{background:var(--red,#c41e24);}
+  .flagbar .g{background:var(--gold,#f0b429);}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(255,248,234,0.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line,rgba(36,26,13,0.14));}
+  .nav{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;gap:16px;}
+  .brand{display:flex;align-items:center;gap:10px;min-width:0;}
+  .brand-mark{width:40px;height:40px;flex-shrink:0;object-fit:contain;}
+  .brand-text{line-height:1.1;min-width:0;}
+  .brand-text .en{font-size:11px;letter-spacing:0.14em;color:var(--grey,#7a6f5c);text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .brand-text .ta{font-family:'Catamaran',sans-serif;font-weight:800;font-size:17px;color:var(--red-deep,#8f1116);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;}
+  nav.links{display:flex;gap:26px;font-size:15px;font-weight:500;}
+  nav.links a{position:relative;padding:4px 0;color:inherit;text-decoration:none;}
+  nav.links a::after{content:'';position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--red,#c41e24);transition:width .25s ease;}
+  nav.links a:hover::after{width:100%;}
+  .nav-right{display:flex;align-items:center;gap:14px;flex-shrink:0;}
+  .lang-toggle{display:flex;border:1px solid var(--line,rgba(36,26,13,0.14));border-radius:20px;overflow:hidden;font-size:12px;font-weight:700;cursor:pointer;flex-shrink:0;}
+  .lang-toggle button{border:0;background:transparent;padding:7px 14px;cursor:pointer;font-family:inherit;color:var(--grey,#7a6f5c);transition:background .2s ease,color .2s ease;}
+  .lang-toggle button.active{background:var(--red,#c41e24);color:#fff;}
+  .cta-btn{background:var(--red,#c41e24);color:#fff;padding:11px 22px;border-radius:3px;font-weight:600;font-size:14px;letter-spacing:0.02em;border:1px solid var(--red,#c41e24);transition:background .2s ease, color .2s ease;display:inline-block;white-space:nowrap;text-decoration:none;}
+  .cta-btn:hover{background:var(--red-deep,#8f1116);}
+  .menu-toggle{display:none;background:none;border:0;font-size:24px;cursor:pointer;color:var(--ink,#241a0d);line-height:1;padding:4px 6px;flex-shrink:0;}
+  .mobile-links{display:none;flex-direction:column;background:var(--cream,#fff8ea);border-bottom:1px solid var(--line,rgba(36,26,13,0.14));max-height:0;overflow:hidden;transition:max-height .3s ease;}
+  .mobile-links.open{max-height:520px;}
+  .mobile-links a{padding:16px 24px;font-size:16px;font-weight:600;border-bottom:1px solid var(--line,rgba(36,26,13,0.14));color:inherit;text-decoration:none;display:block;}
+  .mobile-links a.mobile-cta{color:var(--red,#c41e24);}
+
+  [lang-en]{display:none;}
+  body.lang-en [lang-ta]{display:none;}
+  body.lang-en [lang-en]{display:inline;}
+  body.lang-en [lang-en].block{display:block;}
+
+  @media (max-width:1024px){
+    nav.links{gap:18px;font-size:14px;}
+  }
+  @media (max-width:860px){
+    .nav{padding:12px 18px;gap:10px;}
+    nav.links{display:none;}
+    .menu-toggle{display:block;}
+    .mobile-links{display:flex;}
+    .cta-btn{display:none;}
+  }
+  @media (max-width:480px){
+    .brand-text .en{display:none;}
+    .brand-mark{width:34px;height:34px;}
+    .brand-text .ta{font-size:15px;}
+    .nav{padding:10px 14px;gap:8px;}
+    .nav-right{gap:8px;}
+    .lang-toggle button{padding:5px 9px;font-size:11px;}
+    .menu-toggle{font-size:22px;}
+    .mobile-links a{padding:14px 18px;font-size:15px;}
+  }
+  @media (max-width:380px){
+    .brand-text .ta{font-size:13.5px;}
+    .brand-mark{width:28px;height:28px;}
+  }
+</style>
+
+<div class="flagbar"><span class="r"></span><span class="g"></span></div>
+
+<header>
+  <div class="nav">
+    <div class="brand">
+      <img class="brand-mark" src="img/Vijay_Sarkar_Logo.png" alt="TVK Logo">
+      <div class="brand-text">
+        <div class="en">Tamilaga Vettri Kazhagam</div>
+        <div class="ta"><span lang-ta>TVK திருச்சிராப்பள்ளி</span><span lang-en>TVK Tiruchirappalli</span></div>
+      </div>
+    </div>
+  <nav class="links">
+  <a href="index.html#about">
+    <span lang-ta>எங்களைப் பற்றி</span>
+    <span lang-en>About</span>
+  </a>
+
+  <a href="ministers.html">
+    <span lang-ta>அமைச்சர்கள்</span>
+    <span lang-en>Ministers</span>
+  </a>
+
+  <a href="scheme.html">
+    <span lang-ta>அரசுத் திட்டங்கள்</span>
+    <span lang-en>Government Schemes</span>
+  </a>
+
+    <a href="news.html">
+    <span lang-ta>செய்திகள்</span>
+    <span lang-en>News</span>
+  </a>
+
+
+  <a href="vijay.html">
+    <span lang-ta>முதல்வர் விஜய்</span>
+    <span lang-en>Chief Minister Vijay</span>
+  </a>
+</nav>
+    <div class="nav-right">
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button type="button" data-lang="ta" class="active">தமிழ்</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+      <a href="index.html#volunteer" class="cta-btn"><span lang-ta>தன்னார்வலராக இணையுங்கள்</span><span lang-en>Join as Volunteer</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+<div class="mobile-links" id="mobileLinks">
+  <a href="index.html#about">
+    <span lang-ta>எங்களைப் பற்றி</span>
+    <span lang-en>About</span>
+  </a>
+
+  <a href="ministers.html">
+    <span lang-ta>அமைச்சர்கள்</span>
+    <span lang-en>Ministers</span>
+  </a>
+
+  <a href="scheme.html">
+    <span lang-ta>அரசுத் திட்டங்கள்</span>
+    <span lang-en>Government Schemes</span>
+  </a>
+
+  <a href="vijay.html">
+    <span lang-ta>முதல்வர் விஜய்</span>
+    <span lang-en>Chief Minister Vijay</span>
+  </a>
+</div>
+</header>
+
+<script>
+  (function(){
+    const toggleBtns = document.querySelectorAll('.lang-toggle button');
+    function setLang(lang){
+      document.body.classList.toggle('lang-en', lang === 'en');
+      toggleBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+      document.documentElement.lang = lang === 'en' ? 'en' : 'ta';
+    }
+    toggleBtns.forEach(btn => btn.addEventListener('click', () => setLang(btn.dataset.lang)));
+
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileLinks = document.getElementById('mobileLinks');
+    if(menuToggle && mobileLinks){
+      menuToggle.addEventListener('click', () => {
+        const isOpen = mobileLinks.classList.toggle('open');
+        menuToggle.textContent = isOpen ? '✕' : '☰';
+        menuToggle.setAttribute('aria-expanded', isOpen);
+      });
+      mobileLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileLinks.classList.remove('open');
+          menuToggle.textContent = '☰';
+          menuToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    // Highlight current page link
+    const currentPage = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('nav.links a, .mobile-links a').forEach(a => {
+      const href = a.getAttribute('href').split('#')[0];
+      if(href === currentPage){
+        a.style.color = 'var(--red, #c41e24)';
+      }
+    });
+  })();
+</script>

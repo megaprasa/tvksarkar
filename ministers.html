@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>அமைச்சர்கள் | TVK திருச்சிராப்பள்ளி மாவட்டம்</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;600;700;800;900&family=Hind+Madurai:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#c41e24;
+    --red-deep:#8f1116;
+    --gold:#f0b429;
+    --gold-deep:#c98f0f;
+    --ink:#241a0d;
+    --cream:#fff8ea;
+    --grey:#7a6f5c;
+    --line:rgba(36,26,13,0.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--cream);color:var(--ink);font-family:'Hind Madurai', sans-serif;overflow-x:hidden;}
+  h1,h2,h3,.display{font-family:'Catamaran', sans-serif;font-weight:800;letter-spacing:-0.01em;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;}
+  [lang-en]{display:none;}
+  body.lang-en [lang-ta]{display:none;}
+  body.lang-en [lang-en]{display:inline;}
+  body.lang-en [lang-en].block{display:block;}
+
+  .flagbar{height:6px;display:flex;}
+  .flagbar span{flex:1;}
+  .flagbar .r{background:var(--red);}
+  .flagbar .g{background:var(--gold);}
+
+  .page-hero{position:relative;padding:64px 24px 56px;background:linear-gradient(135deg,var(--red-deep),var(--red));color:#fff;overflow:hidden;}
+  .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 800px 400px at 90% -10%, rgba(240,180,41,0.25), transparent 60%);pointer-events:none;}
+  .page-hero-inner{max-width:1180px;margin:0 auto;position:relative;z-index:1;}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:16px;}
+  .eyebrow::before{content:'';width:22px;height:2px;background:var(--gold);display:inline-block;flex-shrink:0;}
+  .page-hero h1{font-size:clamp(26px,6vw,46px);line-height:1.15;max-width:800px;}
+  .page-hero p{margin-top:16px;max-width:640px;color:rgba(255,255,255,0.85);font-size:clamp(14px,2.4vw,15.5px);line-height:1.7;font-weight:300;}
+  .notice{
+    margin-top:24px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);
+    border-radius:4px;padding:14px 18px;font-size:13.5px;line-height:1.6;color:rgba(255,255,255,0.9);max-width:720px;
+  }
+  .notice code{word-break:break-all;}
+
+  section{padding:64px 24px;}
+  .wrap{max-width:1180px;margin:0 auto;}
+
+  .cm-card{
+    background:#fff;border:1px solid var(--line);border-radius:6px;padding:30px;
+    display:grid;grid-template-columns:110px 1fr;gap:24px;align-items:center;margin-bottom:48px;
+    box-shadow:0 12px 28px rgba(36,26,13,0.06);
+  }
+ .avatar{
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    overflow:hidden;
+    flex-shrink:0;
+    background:none;
+    display:block;
+}
+
+.avatar img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    border-radius:50%;
+}
+  .cm-card .role{font-size:12.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);font-weight:700;}
+  .cm-card h2{font-size:clamp(20px,4vw,24px);margin-top:6px;color:var(--red-deep);}
+  .cm-card .meta{color:var(--grey);font-size:14.5px;margin-top:6px;}
+
+  .min-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .min-card{
+    background:#fff;border:1px solid var(--line);border-radius:6px;padding:26px 22px;
+    transition:transform .2s ease, box-shadow .2s ease;position:relative;overflow:hidden;
+  }
+  .min-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(var(--red) 0 50%, var(--gold) 50% 100%);}
+  .min-card:hover{transform:translateY(-3px);box-shadow:0 14px 26px rgba(36,26,13,0.1);}
+  .min-card .avatar{width:84px;height:84px;font-size:20px;margin-bottom:16px;}
+  .min-card h3{font-size:18px;color:var(--red-deep);font-family:'Catamaran',sans-serif;font-weight:700;}
+  .min-card .portfolio{font-size:13.5px;color:var(--gold-deep);font-weight:700;margin-top:4px;}
+  .min-card .const{font-size:13.5px;color:var(--grey);margin-top:10px;}
+  .min-card .contact{margin-top:14px;padding-top:14px;border-top:1px solid var(--line);font-size:13px;color:var(--grey);word-break:break-word;}
+  .min-card .contact a{color:var(--red);font-weight:600;}
+  .badge-trichy{
+    display:inline-block;margin-top:10px;background:rgba(196,30,36,0.08);color:var(--red);
+    font-size:11px;font-weight:700;letter-spacing:0.06em;padding:4px 9px;border-radius:3px;text-transform:uppercase;
+  }
+
+  .foot-note{
+    background:#fff;border:1px dashed var(--line);border-radius:4px;padding:22px;margin-top:44px;
+    font-size:13.5px;color:var(--grey);line-height:1.7;word-break:break-word;
+  }
+  .foot-note strong{color:var(--ink);}
+
+ 
+
+  /* ===== Responsive breakpoints ===== */
+
+  /* Large tablets / small laptops */
+  @media (max-width:1024px){
+    .wrap{max-width:100%;}
+    .min-grid{grid-template-columns:repeat(2,1fr);gap:18px;}
+    nav.links{gap:18px;font-size:14px;}
+  }
+
+  /* Tablets */
+  @media (max-width:860px){
+    .cm-card{grid-template-columns:1fr;text-align:center;justify-items:center;padding:26px 22px;}
+    section{padding:52px 20px;}
+  }
+
+  /* Small tablets / large phones */
+  @media (max-width:680px){
+    .min-grid{grid-template-columns:repeat(2,1fr);gap:16px;}
+    .page-hero{padding:52px 20px 44px;}
+    .lang-toggle button{padding:6px 11px;font-size:11.5px;}
+  }
+
+  /* Phones */
+  @media (max-width:600px){
+    .min-grid{grid-template-columns:1fr;}
+    .page-hero{padding:44px 16px 36px;}
+    section{padding:40px 16px;}
+    .cm-card{padding:22px 16px;margin-bottom:36px;}
+    .avatar{width:88px;height:88px;font-size:26px;}
+    .notice{padding:12px 14px;font-size:13px;}
+  }
+
+  /* Small phones */
+  @media (max-width:480px){
+    .eyebrow{font-size:11.5px;margin-bottom:12px;}
+    .min-card{padding:20px 16px;}
+    .min-card .avatar{width:56px;height:56px;font-size:17px;margin-bottom:12px;}
+    .min-card h3{font-size:16.5px;}
+    .foot-note{padding:18px;font-size:12.5px;}
+    
+  }
+
+  /* Extra small phones */
+  @media (max-width:380px){
+    .avatar{width:76px;height:76px;font-size:22px;}
+    .page-hero h1{font-size:24px;}
+    .page-hero p{font-size:13.5px;}
+    .cm-card h2{font-size:19px;}
+  }
+</style>
+</head>
+<body>
+
+<div id="navbar-placeholder"></div>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <span class="eyebrow"><span lang-ta>தமிழ்நாடு அரசு</span><span lang-en>Government of Tamil Nadu</span></span>
+    <h1><span lang-ta>அமைச்சரவை — 2026</span><span lang-en>Council of Ministers — 2026</span></h1>
+    <p>
+      <span lang-ta>தலைவர் விஜய் தலைமையிலான TVK அரசின் முதலமைச்சர் மற்றும் அமைச்சர்கள் குழு. திருச்சிராப்பள்ளி மாவட்டத்தை சேர்ந்த அமைச்சர்கள் தனியாக குறிக்கப்பட்டுள்ளனர்.</span>
+      <span lang-en>The Chief Minister and Council of Ministers of the TVK-led Government under Vijay. Ministers from Tiruchirappalli district are marked separately.</span>
+    </p>
+    <!--<div class="notice">
+      <span lang-ta><strong>குறிப்பு:</strong> புகைப்படங்கள் மற்றும் தனிப்பட்ட தொடர்பு எண்/மின்னஞ்சல் இங்கு துல்லியமாக சேர்க்கப்படவில்லை. tn.gov.in-ல் இருந்து அதிகாரப்பூர்வ புகைப்படங்களை பதிவிறக்கம் செய்து <code>images/ministers/</code> கோப்புறையில் கீழே உள்ள பெயர்களுடன் பதிவேற்றவும் — படங்கள் தானாகவே இணைந்துவிடும்.</span>
+      <span lang-en><strong>Note:</strong> Photos and personal phone/email are not auto-filled here. Download official photos from tn.gov.in and upload them into an <code>images/ministers/</code> folder using the filenames below — they'll link in automatically.</span>
+    </div>-->
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+
+    <div class="cm-card">
+      <div class="avatar"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV1jrEf5wTVf1eZ6bbMf2GnmkIqddy6pBvCjV-WLcORtjrxFo_4jCDqdQ&s=10" onerror="this.remove()" alt="">CV</div>
+      <div>
+        <div class="role"><span lang-ta>முதலமைச்சர்</span><span lang-en>Chief Minister</span></div>
+        <h2>C. Joseph Vijay</h2>
+        <div class="meta"><span lang-ta>தமிழக வெற்றிக் கழகம் (TVK)</span><span lang-en>Tamilaga Vettri Kazhagam (TVK)</span> · <span lang-ta>பதவியேற்பு: மே 10, 2026</span><span lang-en>Sworn in: 10 May 2026</span></div>
+      </div>
+    </div>
+
+    <div class="min-grid">
+
+      <div class="min-card">
+        <div class="avatar"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3nyv_92VmJbbozT_U1sEZKaQO7GErcLDxac83MYfaMQ&s=10" onerror="this.remove()" alt="">KS</div>
+        <h3>K. A. Sengottaiyan</h3>
+        <div class="portfolio"><span lang-ta>வருவாய் துறை · சபை தலைவர்</span><span lang-en>Revenue · Leader of the House</span></div>
+        <div class="const"><span lang-ta>உறுப்பினர்</span><span lang-en>MLA</span></div>
+        <div class="contact"><span lang-ta>அலுவலக தொடர்பு: TN அரசு செயலகம்</span><span lang-en>Office contact: TN Govt Secretariat</span></div>
+      </div>
+
+      <div class="min-card">
+        <div class="avatar"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAES8aowSoj0yJV7FEX03RKu8tNYa-kvHt0ybcSrPMvw&s" onerror="this.remove()" alt="">NA</div>
+        <h3>N. Anand</h3>
+        <div class="portfolio"><span lang-ta>ஊரக வளர்ச்சி · நீர்வளத் துறை</span><span lang-en>Rural Development · Water Resources</span></div>
+        <div class="const"><span lang-ta>தொகுதி: தியாகராயநகர்</span><span lang-en>Constituency: Thiyagarayanagar</span></div>
+        <div class="contact"><span lang-ta>அலுவலக தொடர்பு: TN அரசு செயலகம்</span><span lang-en>Office contact: TN Govt Secretariat</span></div>
+      </div>
+
+      <div class="min-card">
+        <div class="avatar"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTphafp72DQWqS_SEIKAq5yj-qZTbgiWQfCJBjiatbVoQ&s=10" onerror="this.remove()" alt="">AA</div>
+        <h3>Aadhav Arjuna</h3>
+        <div class="portfolio"><span lang-ta>பொதுப்பணி · விளையாட்டு மேம்பாடு</span><span lang-en>Public Works · Sports Development</span></div>
+        <div class="const"><span lang-ta>தொகுதி: வில்லிவாக்கம்</span><span lang-en>Constituency: Villivakkam</span></div>
+        <div class="contact"><span lang-ta>அலுவலக தொடர்பு: TN அரசு செயலகம்</span><span lang-en>Office contact: TN Govt Secretariat</span></div>
+      </div>
+
+      <div class="min-card">
+        <div class="avatar"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpcTEkyMhSdI-SzEWffAciGgmEKYuwjt8EKqA3-pUqGg&s" onerror="this.remove()" alt="">PV</div>
+        <h3>P. Venkataramanan</h3>
+        <div class="portfolio"><span lang-ta>உணவு மற்றும் குடிமக்கள் வழங்கல்</span><span lang-en>Food and Civil Supplies</span></div>
+        <div class="const"><span lang-ta>தொகுதி: மயிலாப்பூர்</span><span lang-en>Constituency: Mylapore</span></div>
+        <div class="contact"><span lang-ta>அலுவலக தொடர்பு: TN அரசு செயலகம்</span><span lang-en>Office contact: TN Govt Secretariat</span></div>
+      </div>
+
+      <div class="min-card">
+        <div class="avatar"><img src="https://d8c4bhp8zz98f.cloudfront.net/candidates/tvk-1131.jpg" onerror="this.remove()" alt="">TP</div>
+        <h3>T. K. Prabhu</h3>
+        <div class="portfolio"><span lang-ta>இயற்கை வளத் துறை</span><span lang-en>Natural Resources</span></div>
+        <div class="const"><span lang-ta>தொகுதி: காரைக்குடி</span><span lang-en>Constituency: Karaikudi</span></div>
+        <div class="contact"><span lang-ta>அலுவலக தொடர்பு: TN அரசு செயலகம்</span><span lang-en>Office contact: TN Govt Secretariat</span></div>
+      </div>
+
+      <div class="min-card">
+        <div class="avatar"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/S._Ramesh-TVK.jpg/500px-S._Ramesh-TVK.jpg" onerror="this.remove()" alt="">SR</div>
+        <h3>S. Ramesh</h3>
+        <div class="portfolio"><span lang-ta>இந்து சமய அறநிலையத் துறை</span><span lang-en>Hindu Religious &amp; Charitable Endowments</span></div>
+        <div class="const"><span lang-ta>தொகுதி: ஸ்ரீரங்கம்</span><span lang-en>Constituency: Srirangam</span></div>
+        <span class="badge-trichy"><span lang-ta>திருச்சி மாவட்டம்</span><span lang-en>Trichy District</span></span>
+        <div class="contact"><span lang-ta>அலுவலக தொடர்பு: TN அரசு செயலகம்</span><span lang-en>Office contact: TN Govt Secretariat</span></div>
+      </div>
+
+      <div class="min-card">
+        <div class="avatar"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzeXm_oYKif1CTRvk1YIPNjS6CxZQTIGdU_aqWbIaUXg&s=10" onerror="this.remove()" alt="">DS</div>
+        <h3>D. Sarathkumar</h3>
+        <div class="portfolio"><span lang-ta>மனித வள மேலாண்மை</span><span lang-en>Human Resources Management</span></div>
+        <div class="const"><span lang-ta>தொகுதி: தாம்பரம்</span><span lang-en>Constituency: Tambaram</span></div>
+        <div class="contact"><span lang-ta>அலுவலக தொடர்பு: TN அரசு செயலகம்</span><span lang-en>Office contact: TN Govt Secretariat</span></div>
+      </div>
+
+      <div class="min-card">
+        <div class="avatar"><img src="https://d8c4bhp8zz98f.cloudfront.net/candidates/tvk-1038.jpg" onerror="this.remove()" alt="">VP</div>
+        <h3>Vijay Tamilan Parthiban</h3>
+        <div class="portfolio"><span lang-ta>போக்குவரத்துத் துறை</span><span lang-en>Transportation</span></div>
+        <div class="const"><span lang-ta>தொகுதி: சேலம் (தெற்கு)</span><span lang-en>Constituency: Salem (South)</span></div>
+        <div class="contact"><span lang-ta>அலுவலக தொடர்பு: TN அரசு செயலகம்</span><span lang-en>Office contact: TN Govt Secretariat</span></div>
+      </div>
+
+      <div class="min-card">
+        <div class="avatar"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9aScSyXyrO0hoQdU88WaSalxFxdlpUbdAA2OxfJoYjw&s" onerror="this.remove()" alt="">MV</div>
+        <h3>M. Vijay Balaji</h3>
+        <div class="portfolio"><span lang-ta>துறை: விரைவில் அறிவிக்கப்படும்</span><span lang-en>Portfolio: To be announced</span></div>
+        <div class="const"><span lang-ta>தொகுதி: ஈரோடு கிழக்கு</span><span lang-en>Constituency: Erode East</span></div>
+        <div class="contact"><span lang-ta>அலுவலக தொடர்பு: TN அரசு செயலகம்</span><span lang-en>Office contact: TN Govt Secretariat</span></div>
+      </div>
+
+      <div class="min-card">
+        <div class="avatar"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxJENJ53PdJqfHfC6QeageQ17s9q1HU09JXutkpV4BqyafuyIAj8J20Yk0&s=10" onerror="this.remove()" alt="">KA</div>
+        <h3>Dr. K. G. Arunraj</h3>
+        <div class="portfolio"><span lang-ta>சுகாதாரம், மருத்துவக் கல்வி மற்றும் குடும்ப நலத்துறை</span><span lang-en>Health, Medical Education &amp; Family Welfare</span></div>
+        <div class="const"><span lang-ta>தொகுதி: திருச்செங்கோடு</span><span lang-en>Constituency: Tiruchengode</span></div>
+        <div class="contact"><span lang-ta>அலுவலக தொடர்பு: TN அரசு செயலகம்</span><span lang-en>Office contact: TN Govt Secretariat</span></div>
+      </div>
+
+    </div>
+
+    <div class="foot-note">
+      <span lang-ta><strong>முக்கிய குறிப்பு:</strong> 2026 அமைச்சரவையில் மொத்தம் 34 அமைச்சர்கள் உள்ளனர். இங்கு அறியப்பட்ட 10 பேர் மட்டும் பட்டியலிடப்பட்டுள்ளனர் — முழு பட்டியலும் tn.gov.in-ல் சரிபார்த்து சேர்க்கவும்.</span>
+      <span lang-en><strong>Note:</strong> The full 2026 cabinet has 34 ministers. Only the 10 confirmed here are listed — verify and add the rest from tn.gov.in.</span>
+      <br><br>
+      
+    </div>
+
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+
+
+<script>
+  fetch('footer.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('footer-placeholder').innerHTML = html;
+
+      // Footer script execute
+      const scripts = document
+        .getElementById('footer-placeholder')
+        .querySelectorAll("script");
+
+      scripts.forEach(oldScript => {
+        const newScript = document.createElement("script");
+
+        if (oldScript.src) {
+          newScript.src = oldScript.src;
+        } else {
+          newScript.textContent = oldScript.textContent;
+        }
+
+        document.body.appendChild(newScript);
+        oldScript.remove();
+      });
+    })
+    .catch(err => console.error("Footer load failed:", err));
+</script>
+
+
+<script>
+ fetch('navbar.html')
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById('navbar-placeholder').innerHTML = html;
+
+    // Execute navbar script manually
+    const scripts = document.getElementById('navbar-placeholder').querySelectorAll("script");
+
+    scripts.forEach(oldScript => {
+      const newScript = document.createElement("script");
+
+      if (oldScript.src) {
+        newScript.src = oldScript.src;
+      } else {
+        newScript.textContent = oldScript.textContent;
+      }
+
+      document.body.appendChild(newScript);
+      oldScript.remove();
+    });
+  })
+  .catch(err => console.error(err));
+</script>
+
+</body>
+</html>

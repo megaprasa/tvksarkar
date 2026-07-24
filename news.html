@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TVK Blog — செய்திகள் & கட்டுரைகள் | TVK திருச்சிராப்பள்ளி மாவட்டம்</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;600;700;800;900&family=Hind+Madurai:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#c41e24;
+    --red-deep:#8f1116;
+    --gold:#f0b429;
+    --gold-deep:#c98f0f;
+    --ink:#241a0d;
+    --cream:#fff8ea;
+    --grey:#7a6f5c;
+    --line:rgba(36,26,13,0.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--cream);color:var(--ink);font-family:'Hind Madurai', sans-serif;overflow-x:hidden;}
+  h1,h2,h3,.display{font-family:'Catamaran', sans-serif;font-weight:800;letter-spacing:-0.01em;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;}
+  [lang-en]{display:none;}
+  body.lang-en [lang-ta]{display:none;}
+  body.lang-en [lang-en]{display:inline;}
+  body.lang-en [lang-en].block{display:block;}
+
+  .page-hero{position:relative;padding:64px 24px 56px;background:linear-gradient(135deg,var(--red-deep),var(--red));color:#fff;overflow:hidden;}
+  .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 800px 400px at 90% -10%, rgba(240,180,41,0.25), transparent 60%);pointer-events:none;}
+  .page-hero-inner{max-width:1180px;margin:0 auto;position:relative;z-index:1;}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:16px;}
+  .eyebrow::before{content:'';width:22px;height:2px;background:var(--gold);display:inline-block;flex-shrink:0;}
+  .page-hero h1{font-size:clamp(24px,5.4vw,42px);line-height:1.18;max-width:840px;}
+  .page-hero p{margin-top:16px;max-width:680px;color:rgba(255,255,255,0.85);font-size:clamp(14px,2.4vw,15.5px);line-height:1.7;font-weight:300;}
+
+  section{padding:56px 24px;}
+  .wrap{max-width:1180px;margin:0 auto;}
+
+  /* Filter chips */
+  .chip-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px;}
+  .chip{
+    padding:8px 16px;border-radius:20px;font-size:13px;font-weight:600;
+    background:#fff;border:1px solid var(--line);color:var(--grey);cursor:pointer;
+  }
+  .chip.active{background:var(--red);color:#fff;border-color:var(--red);}
+
+  /* Featured post */
+  .featured{
+    display:grid;grid-template-columns:1.1fr 1fr;gap:0;
+    background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden;
+    box-shadow:0 12px 28px rgba(36,26,13,0.06);margin-bottom:40px;
+  }
+  .featured-media{background:linear-gradient(135deg,var(--red-deep),var(--red));position:relative;min-height:220px;display:flex;align-items:flex-end;padding:24px;overflow:hidden;}
+  .featured-media::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 500px 300px at 20% 0%, rgba(240,180,41,0.3), transparent 60%);}
+  .featured-media .fm-tag{position:relative;z-index:1;background:var(--gold);color:var(--red-deep);font-weight:700;font-size:12px;padding:6px 14px;border-radius:20px;}
+  .featured-body{padding:32px;display:flex;flex-direction:column;justify-content:center;}
+  .featured-body .fb-eyebrow{color:var(--red-deep);font-weight:700;font-size:12.5px;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:10px;}
+  .featured-body h2{font-size:clamp(19px,3vw,25px);line-height:1.3;margin-bottom:12px;}
+  .featured-body p{font-size:14.5px;line-height:1.75;color:var(--grey);margin-bottom:18px;}
+  .featured-body .fb-meta{font-size:12.5px;color:var(--grey);display:flex;gap:14px;align-items:center;}
+  .featured-body .fb-meta .dot{width:5px;height:5px;border-radius:50%;background:var(--gold-deep);display:inline-block;}
+  .featured-body .read-more{margin-top:18px;display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:13.5px;color:var(--red-deep);}
+
+  /* Card grid */
+  .post-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .post-card{
+    background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden;
+    box-shadow:0 8px 18px rgba(36,26,13,0.05);display:flex;flex-direction:column;
+    transition:transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .post-card:hover{transform:translateY(-3px);box-shadow:0 14px 26px rgba(36,26,13,0.09);}
+  .pc-media{height:120px;background:linear-gradient(135deg,var(--gold-deep),var(--gold));position:relative;overflow:hidden;}
+  .pc-media.alt{background:linear-gradient(135deg,var(--red-deep),var(--red));}
+  .pc-media .pc-tag{position:absolute;bottom:12px;left:14px;background:rgba(255,255,255,0.92);color:var(--red-deep);font-weight:700;font-size:11px;padding:5px 12px;border-radius:16px;}
+  .pc-body{padding:22px;display:flex;flex-direction:column;flex:1;}
+  .pc-body h3{font-size:16px;line-height:1.4;margin-bottom:10px;color:var(--ink);}
+  .pc-body p{font-size:13.5px;line-height:1.7;color:var(--grey);margin-bottom:16px;flex:1;}
+  .pc-meta{font-size:12px;color:var(--grey);display:flex;gap:10px;align-items:center;padding-top:14px;border-top:1px solid var(--line);}
+  .pc-meta .dot{width:4px;height:4px;border-radius:50%;background:var(--gold-deep);display:inline-block;}
+
+  .empty-note{
+    text-align:center;padding:40px 20px;color:var(--grey);font-size:14px;
+    background:#fff;border:1px dashed var(--line);border-radius:6px;margin-top:24px;
+  }
+
+  @media (max-width:900px){
+    .featured{grid-template-columns:1fr;}
+    .featured-media{min-height:140px;}
+    .post-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:680px){
+    section{padding:44px 20px;}
+    .post-grid{grid-template-columns:1fr;}
+    .featured-body{padding:24px;}
+  }
+  @media (max-width:480px){
+    .page-hero{padding:44px 16px 36px;}
+  }
+</style>
+</head>
+<body>
+
+<div id="navbar-placeholder"></div>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <span class="eyebrow"><span lang-ta>TVK Blog</span><span lang-en>TVK Blog</span></span>
+    <h1><span lang-ta>செய்திகள், அறிக்கைகள் மற்றும் கட்டுரைகள்</span><span lang-en>News, Announcements & Articles</span></h1>
+    <p>
+      <span lang-ta>தமிழக வெற்றிக் கழகத்தின் சமீபத்திய செய்திகள், அரசு நடவடிக்கைகள் மற்றும் நலத்திட்ட அறிவிப்புகளை இங்கு பார்வையிடலாம்.</span>
+      <span lang-en>Read the latest news, government updates, and welfare scheme announcements from Tamilaga Vettri Kazhagam here.</span>
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+
+    <div class="chip-row">
+      <span class="chip active"><span lang-ta>அனைத்தும்</span><span lang-en>All</span></span>
+      <span class="chip"><span lang-ta>அரசியல் செய்தி</span><span lang-en>Political News</span></span>
+      <span class="chip"><span lang-ta>நலத்திட்டங்கள்</span><span lang-en>Welfare Schemes</span></span>
+      <span class="chip"><span lang-ta>அரசு நடவடிக்கை</span><span lang-en>Governance</span></span>
+    </div>
+
+    <!-- Featured post -->
+    <a class="featured" href="blogview.html">
+      <div class="featured-media">
+        <img src="https://ichef.bbci.co.uk/news/1024/cpsprodpb/f882/live/9b8f23d0-4aa3-11f1-ad34-01f832f4c917.jpg.webp" alt="Allied front meeting" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        <span class="fm-tag"><span lang-ta>புதியது</span><span lang-en>Latest</span></span>
+      </div>
+      <div class="featured-body">
+        <span class="fb-eyebrow"><span lang-ta>அரசியல் செய்தி</span><span lang-en>Political News</span></span>
+        <h2><span lang-ta>கூட்டணி கட்சிகளுடன் முதலமைச்சர் விஜய் சந்திப்பு</span><span lang-en>CM Vijay Meets Allied Party Leaders</span></h2>
+        <p><span lang-ta>காங்கிரஸ், VCK, IUML, MDMK தலைவர்களுடன் சந்திப்பு — புதிய அரசியல் முன்னணி நோக்கி முதல் அடி.</span><span lang-en>Meeting with Congress, VCK, IUML and MDMK leaders — the first step toward a broader political front.</span></p>
+        <div class="fb-meta">
+          <span><span lang-ta>ஜூலை 1, 2026</span><span lang-en>July 1, 2026</span></span>
+          <span class="dot"></span>
+          <span><span lang-ta>சென்னை</span><span lang-en>Chennai</span></span>
+        </div>
+        <span class="read-more"><span lang-ta>முழுவதும் படிக்க →</span><span lang-en>Read full article →</span></span>
+      </div>
+    </a>
+
+    <!-- Post grid -->
+    <div class="post-grid">
+
+      <a class="post-card" href="tvk-manifesto-welfare-schemes.html">
+        <div class="pc-media alt">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREVwYWjjtUosaQgEtlUyB_QDhKsXXhgdLYqnyW4bticnRJxVMZcM4KBV8&s=10" alt="Manifesto welfare schemes" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+          <span class="pc-tag"><span lang-ta>தேர்தல் அறிக்கை</span><span lang-en>Manifesto</span></span>
+        </div>
+        <div class="pc-body">
+          <h3><span lang-ta>TVK தேர்தல் அறிக்கை 2026 — நலத்திட்டங்கள்</span><span lang-en>TVK Election Manifesto 2026 — Welfare Schemes</span></h3>
+          <p><span lang-ta>பெண்கள், விவசாயிகள், மாணவர்கள், மூத்த குடிமக்கள் மற்றும் வேலைவாய்ப்பு துறைக்கான முக்கிய வாக்குறுதிகள் — துறை வாரியாக விவரம்.</span><span lang-en>Key promises for women, farmers, students, senior citizens, and employment — sector-wise breakdown.</span></p>
+          <div class="pc-meta">
+            <span><span lang-ta>ஏப்ரல் 16, 2026</span><span lang-en>Apr 16, 2026</span></span>
+            <span class="dot"></span>
+            <span><span lang-ta>நலத்திட்டங்கள்</span><span lang-en>Welfare</span></span>
+          </div>
+        </div>
+      </a>
+
+      <a class="post-card" href="tvk-blog-kootani-front-july2026.html">
+        <div class="pc-media">
+          <img src="https://media.dinamani.com/dinamani/2026-06-28/7fl6942r/HL7V4MJaQAA1gus.jpg?w=640&q=65&auto=format%2Ccompress&fit=max" alt="Allied front meeting" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+          <span class="pc-tag"><span lang-ta>செய்தி</span><span lang-en>News</span></span>
+        </div>
+        <div class="pc-body">
+          <h3><span lang-ta>கூட்டணி முன்னணி கூட்டம்</span><span lang-en>Allied Front Meeting</span></h3>
+          <p><span lang-ta>CPI, CPI(M) தலைவர்கள் தனியாக முதலமைச்சரை சந்தித்து மனு சமர்ப்பணம்.</span><span lang-en>CPI and CPI(M) leaders met the CM separately and submitted a memorandum.</span></p>
+          <div class="pc-meta">
+            <span><span lang-ta>ஜூலை 1, 2026</span><span lang-en>July 1, 2026</span></span>
+            <span class="dot"></span>
+            <span><span lang-ta>அரசியல்</span><span lang-en>Political</span></span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="empty-note">
+      <span lang-ta>மேலும் கட்டுரைகள் விரைவில் இணைக்கப்படும்.</span>
+      <span lang-en>More articles will be added here soon.</span>
+    </div>
+
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+
+<script>
+  fetch('footer.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('footer-placeholder').innerHTML = html;
+      const scripts = document.getElementById('footer-placeholder').querySelectorAll("script");
+      scripts.forEach(oldScript => {
+        const newScript = document.createElement("script");
+        if (oldScript.src) { newScript.src = oldScript.src; }
+        else { newScript.textContent = oldScript.textContent; }
+        document.body.appendChild(newScript);
+        oldScript.remove();
+      });
+    })
+    .catch(err => console.error("Footer load failed:", err));
+</script>
+
+<script>
+ fetch('navbar.html')
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById('navbar-placeholder').innerHTML = html;
+    const scripts = document.getElementById('navbar-placeholder').querySelectorAll("script");
+    scripts.forEach(oldScript => {
+      const newScript = document.createElement("script");
+      if (oldScript.src) { newScript.src = oldScript.src; }
+      else { newScript.textContent = oldScript.textContent; }
+      document.body.appendChild(newScript);
+      oldScript.remove();
+    });
+  })
+  .catch(err => console.error(err));
+</script>
+
+<script>
+  // Simple chip filter (visual only — extend with real category filtering as needed)
+  document.querySelectorAll('.chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>

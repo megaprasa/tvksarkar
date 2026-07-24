@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TVK திருச்சிராப்பள்ளி மாவட்டம் | Tamilaga Vettri Kazhagam</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;600;700;800;900&family=Hind+Madurai:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#c41e24;
+    --red-deep:#8f1116;
+    --gold:#f0b429;
+    --gold-deep:#c98f0f;
+    --ink:#241a0d;
+    --cream:#fff8ea;
+    --grey:#7a6f5c;
+    --line:rgba(36,26,13,0.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Hind Madurai', sans-serif;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{
+    font-family:'Catamaran', sans-serif;
+    font-weight:800;
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;}
+  [lang-en]{display:none;}
+  body.lang-en [lang-ta]{display:none;}
+  body.lang-en [lang-en]{display:inline;}
+  body.lang-en [lang-en].block{display:block;}
+
+  .flagbar{height:6px;display:flex;}
+  .flagbar span{flex:1;}
+  .flagbar .r{background:var(--red);}
+  .flagbar .g{background:var(--gold);}
+
+  /* HERO */
+  .hero {
+    position: relative;
+    padding: 96px 24px 80px;
+    min-height: 100vh;
+
+    background-image:
+        linear-gradient(
+            rgba(196,30,36,0.45),
+            rgba(143,17,22,0.65),
+            rgba(109,13,16,0.75)
+        ),
+        url("https://raw.githubusercontent.com/megaprasa/yuvaara/main/fonts/20260505030128-aa79e90128b6.jpg");
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+
+    color: #fff;
+    overflow: hidden;
+}
+  .hero::before{
+    content:'';
+    position:absolute; inset:0;
+    background:
+      radial-gradient(ellipse 900px 500px at 90% -10%, rgba(240,180,41,0.28), transparent 60%),
+      radial-gradient(ellipse 700px 400px at -5% 110%, rgba(240,180,41,0.15), transparent 60%),
+      linear-gradient(180deg, rgba(255,248,234,0.06) 0%, rgba(109,13,16,0.35) 100%);
+    pointer-events:none;
+  }
+  .hero-inner{max-width:1180px;margin:0 auto;position:relative;z-index:1;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;letter-spacing:0.18em;text-transform:uppercase;
+    color:var(--gold);font-weight:700;margin-bottom:22px;
+  }
+  .eyebrow::before{content:'';width:22px;height:2px;background:var(--gold);display:inline-block;flex-shrink:0;}
+  .hero h1{
+    font-size:clamp(32px,6vw,68px);
+    line-height:1.12;
+    max-width:900px;
+    color:#fff;
+  }
+  .hero h1 .accent{color:var(--gold);}
+  .hero p.lede{
+    margin-top:24px;
+    font-size:clamp(15px,2.2vw,18px);line-height:1.7;
+    max-width:560px;
+    color:rgba(255,255,255,0.85);
+    font-weight:300;
+  }
+  .hero-actions{display:flex;gap:16px;margin-top:38px;flex-wrap:wrap;}
+  .hero-actions .cta-btn{background:var(--gold);color:var(--ink);border-color:var(--gold);flex:1 1 auto;text-align:center;}
+  .hero-actions .cta-btn:hover{background:var(--gold-deep);}
+  .hero-actions .cta-btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,0.3);}
+  .hero-actions .cta-btn.ghost:hover{border-color:var(--gold);color:var(--gold);}
+  .cta-btn{
+    background:var(--red);color:#fff;padding:11px 22px;border-radius:3px;
+    font-weight:600;font-size:14px;letter-spacing:0.02em;
+    border:1px solid var(--red);
+    transition:background .2s ease, color .2s ease;
+    display:inline-block;
+    white-space:nowrap;
+  }
+  .cta-btn:hover{background:var(--red-deep);}
+  .cta-btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);}
+  .cta-btn.ghost:hover{border-color:var(--red);color:var(--red);}
+
+  .hero-stats{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    gap:1px;background:rgba(255,255,255,0.18);
+    margin-top:64px;border:1px solid rgba(255,255,255,0.18);
+  }
+  .stat{background:rgba(0,0,0,0.15);padding:22px 16px;min-width:0;}
+  .stat .num{font-family:'Catamaran',sans-serif;font-weight:900;font-size:clamp(22px,4vw,34px);color:var(--gold);}
+  .stat .lbl{font-size:12.5px;color:rgba(255,255,255,0.7);margin-top:4px;line-height:1.4;}
+
+  section{padding:88px 24px;}
+  .wrap{max-width:1180px;margin:0 auto;}
+  .section-head{max-width:640px;margin-bottom:52px;}
+  .section-head .tag{
+    font-size:13px;letter-spacing:0.16em;text-transform:uppercase;
+    color:var(--red);font-weight:700;margin-bottom:12px;display:block;
+  }
+  .section-head h2{font-size:clamp(26px,3.6vw,40px);line-height:1.2;}
+  .section-head p{margin-top:16px;color:var(--grey);font-size:16.5px;line-height:1.7;}
+
+  /* ABOUT */
+  .about{background:#fff;}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+  .about-grid .pillars{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line);}
+  .pillar{
+    padding:26px 0;border-bottom:1px solid var(--line);
+    display:grid;grid-template-columns:64px 1fr;gap:18px;align-items:start;
+  }
+  .pillar .idx{
+    font-family:'Catamaran',sans-serif;font-weight:900;font-size:15px;color:#fff;background:var(--gold);
+    border-radius:50%;width:40px;height:40px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .pillar h3{font-size:18px;font-weight:600;margin-bottom:6px;}
+  .pillar p{color:var(--grey);font-size:15px;line-height:1.6;}
+
+  /* CONSTITUENCIES */
+  .const{background:var(--cream);}
+  .const-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .const-card{
+    background:#fff;border:1px solid var(--line);border-radius:4px;
+    padding:24px 22px;position:relative;overflow:hidden;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .const-card::before{
+    content:'';position:absolute;left:0;top:0;bottom:0;width:4px;
+    background:linear-gradient(var(--red) 0 50%, var(--gold) 50% 100%);
+  }
+  .const-card:hover{transform:translateY(-3px);box-shadow:0 12px 24px rgba(36,26,13,0.1);}
+  .const-card .no{font-size:12px;color:var(--grey);letter-spacing:0.08em;}
+  .const-card h3{font-family:'Catamaran',sans-serif;font-weight:700;font-size:19px;margin-top:6px;color:var(--red-deep);}
+
+  /* STRIP */
+  .strip{background:var(--gold);color:var(--ink);padding:60px 24px;}
+  .strip .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;}
+  .strip h2{font-size:clamp(22px,3vw,32px);max-width:520px;line-height:1.3;}
+  .strip .cta-btn{background:var(--red);border-color:var(--red);color:#fff;}
+  .strip .cta-btn:hover{background:var(--red-deep);}
+
+  /* VOLUNTEER FORM */
+  .volunteer{background:#fff;}
+  .vol-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:64px;}
+  .vol-grid .copy p{color:var(--grey);line-height:1.75;font-size:16px;margin-top:16px;}
+  .vol-grid .copy ul{margin-top:24px;list-style:none;}
+  .vol-grid .copy li{
+    padding:10px 0 10px 26px;position:relative;font-size:15px;color:var(--ink);
+    border-bottom:1px solid var(--line);
+  }
+  .vol-grid .copy li::before{
+    content:'';position:absolute;left:0;top:16px;width:9px;height:9px;background:var(--red);
+  }
+  form.vform{background:var(--cream);border:1px solid var(--line);padding:36px;border-radius:4px;}
+  .vform .row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+  .vform label{font-size:13px;font-weight:600;color:var(--ink);display:block;margin-bottom:6px;}
+  .vform input, .vform select{
+    width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:3px;
+    background:#fff;font-family:inherit;font-size:16px;
+  }
+  .vform input:focus, .vform select:focus{outline:2px solid var(--red);outline-offset:1px;}
+  .vform .full{margin-bottom:16px;}
+  .vform button{
+    width:100%;padding:14px;background:var(--red);color:#fff;border:0;border-radius:3px;
+    font-weight:700;font-size:15px;cursor:pointer;transition:background .2s ease;
+    font-family:'Hind Madurai',sans-serif;
+  }
+  .vform button:hover{background:var(--red-deep);}
+  .vform .note{font-size:12px;color:var(--grey);margin-top:12px;text-align:center;}
+
+  /* ===== RESPONSIVE BREAKPOINTS ===== */
+
+  /* Tablet */
+  @media (max-width:860px){
+    .hero{padding:72px 20px 60px;}
+    .hero-stats{grid-template-columns:repeat(2,1fr);}
+    .about-grid, .vol-grid{grid-template-columns:1fr;gap:40px;}
+    .const-grid{grid-template-columns:repeat(2,1fr);}
+    .vform .row{grid-template-columns:1fr;}
+    section{padding:64px 20px;}
+  }
+
+  /* Small tablet / large phone */
+  @media (max-width:640px){
+    .hero-actions{flex-direction:column;}
+    .hero-actions .cta-btn{width:100%;}
+    .strip .wrap{flex-direction:column;align-items:flex-start;text-align:left;}
+    .strip .cta-btn{width:100%;text-align:center;}
+    form.vform{padding:26px 20px;}
+  }
+
+  /* Phone */
+  @media (max-width:520px){
+    .flagbar{height:4px;}
+    .hero{padding:56px 16px 48px;min-height:auto;}
+    .hero h1{font-size:clamp(28px,8vw,38px);}
+    .eyebrow{font-size:11.5px;margin-bottom:16px;}
+    .hero-stats{grid-template-columns:repeat(2,1fr);margin-top:40px;}
+    .stat{padding:16px 12px;}
+    section{padding:52px 16px;}
+    .section-head{margin-bottom:36px;}
+    .const-grid{grid-template-columns:1fr;}
+    .strip{padding:44px 16px;}
+    .pillar{grid-template-columns:48px 1fr;gap:14px;}
+    .pillar .idx{width:34px;height:34px;font-size:13px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none !important;}
+  }
+</style>
+</head>
+<body>
+<div id="navbar-placeholder"></div>
+
+
+<section class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">
+      <span lang-ta>திருச்சிராப்பள்ளி மாவட்டம்</span>
+      <span lang-en>Tiruchirappalli District</span>
+    </span>
+    <h1>
+      <span lang-ta>தமிழக மக்களுக்காக<br>ஒரு <span class="accent">புதிய</span> தொடக்கம்</span>
+      <span lang-en>A <span class="accent">new</span> beginning<br>for the people of Tamil Nadu</span>
+    </h1>
+    <p class="lede">
+      <span lang-ta>தமிழக வெற்றிக் கழகத்தின் திருச்சி மாவட்ட பணிகள், தொகுதி வாரியான மக்கள் நல நடவடிக்கைகள் மற்றும் தன்னார்வலர் இயக்கம் — அனைத்தும் இங்கு.</span>
+      <span lang-en>TVK's Tiruchirappalli district activities, constituency-wise welfare initiatives, and the volunteer movement — all in one place.</span>
+    </p>
+    <div class="hero-actions">
+      <a href="#volunteer" class="cta-btn">
+        <span lang-ta>தன்னார்வலராக பதிவு செய்யுங்கள்</span>
+        <span lang-en>Register as Volunteer</span>
+      </a>
+      <a href="#constituencies" class="cta-btn ghost">
+        <span lang-ta>தொகுதிகளை பார்க்க</span>
+        <span lang-en>View Constituencies</span>
+      </a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat"><div class="num">9</div><div class="lbl"><span lang-ta>தொகுதிகள்</span><span lang-en>Constituencies</span></div></div>
+      <div class="stat"><div class="num">1</div><div class="lbl"><span lang-ta>மாவட்டம் — திருச்சி</span><span lang-en>District — Trichy</span></div></div>
+      <div class="stat"><div class="num">100+</div><div class="lbl"><span lang-ta>தன்னார்வலர்கள்</span><span lang-en>Volunteers</span></div></div>
+      <div class="stat"><div class="num">24/7</div><div class="lbl"><span lang-ta>மக்கள் தொடர்பு</span><span lang-en>Public Outreach</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <span class="tag"><span lang-ta>எங்களைப் பற்றி</span><span lang-en>About Us</span></span>
+      <h2>
+        <span lang-ta>மாவட்ட அளவில் மக்களை சென்றடையும் ஒரு இயக்கம்</span>
+        <span lang-en>A movement reaching people at the district level</span>
+      </h2>
+      <p style="margin-top:18px;color:var(--grey);font-size:16.5px;line-height:1.75;">
+        <span lang-ta>திருச்சிராப்பள்ளி மாவட்டத்தின் ஒவ்வொரு தொகுதியிலும் தமிழக வெற்றிக் கழகத்தின் தன்னார்வலர்கள் மக்கள் நலப் பணிகளில் ஈடுபட்டு வருகின்றனர். சமூக சேவை, இளைஞர் அணிதிரட்டல், மற்றும் மக்கள் தொடர்பு நிகழ்வுகள் மூலம் மாவட்டம் முழுவதும் இயக்கத்தை பலப்படுத்துகிறோம்.</span>
+        <span lang-en>In every constituency of Tiruchirappalli district, TVK volunteers are engaged in public welfare work. Through community service, youth mobilisation, and public outreach events, we are strengthening the movement across the district.</span>
+      </p>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="idx">1</div>
+        <div>
+          <h3><span lang-ta>மக்கள் தொடர்பு</span><span lang-en>Public Outreach</span></h3>
+          <p><span lang-ta>தொகுதி வாரியாக நேரடியாக மக்களை சந்தித்து குறைகளை கேட்டல்.</span><span lang-en>Meeting people directly, constituency by constituency, to hear their concerns.</span></p>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="idx">2</div>
+        <div>
+          <h3><span lang-ta>இளைஞர் அணிதிரட்டல்</span><span lang-en>Youth Mobilisation</span></h3>
+          <p><span lang-ta>கல்லூரி மற்றும் ஊர் அளவில் இளைஞர்களை இயக்கத்தில் இணைத்தல்.</span><span lang-en>Bringing college and local youth into the movement.</span></p>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="idx">3</div>
+        <div>
+          <h3><span lang-ta>சமூக சேவை</span><span lang-en>Community Service</span></h3>
+          <p><span lang-ta>மருத்துவ முகாம்கள், நிவாரண பணிகள் மற்றும் பொது நல செயல்பாடுகள்.</span><span lang-en>Medical camps, relief work, and public welfare activities.</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="const" id="constituencies">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag"><span lang-ta>தொகுதிகள்</span><span lang-en>Constituencies</span></span>
+      <h2>
+        <span lang-ta>திருச்சிராப்பள்ளி மாவட்ட தொகுதிகள்</span>
+        <span lang-en>Tiruchirappalli District Constituencies</span>
+      </h2>
+      <p>
+        <span lang-ta>மாவட்டத்தின் 9 தொகுதிகளிலும் TVK நடவடிக்கைகள் தொடர்ந்து நடைபெற்று வருகின்றன.</span>
+        <span lang-en>TVK activities are ongoing in all 9 constituencies of the district.</span>
+      </p>
+    </div>
+    <div class="const-grid">
+      <div class="const-card"><span class="no">01</span><h3><span lang-ta>மணப்பாறை</span><span lang-en>Manapparai</span></h3></div>
+      <div class="const-card"><span class="no">02</span><h3><span lang-ta>ஸ்ரீரங்கம்</span><span lang-en>Srirangam</span></h3></div>
+      <div class="const-card"><span class="no">03</span><h3><span lang-ta>திருச்சிராப்பள்ளி மேற்கு</span><span lang-en>Tiruchirappalli West</span></h3></div>
+      <div class="const-card"><span class="no">04</span><h3><span lang-ta>திருச்சிராப்பள்ளி கிழக்கு</span><span lang-en>Tiruchirappalli East</span></h3></div>
+      <div class="const-card"><span class="no">05</span><h3><span lang-ta>திருவெறும்பூர்</span><span lang-en>Thiruverumbur</span></h3></div>
+      <div class="const-card"><span class="no">06</span><h3><span lang-ta>லால்குடி</span><span lang-en>Lalgudi</span></h3></div>
+      <div class="const-card"><span class="no">07</span><h3><span lang-ta>மணச்சநல்லூர்</span><span lang-en>Manachanallur</span></h3></div>
+      <div class="const-card"><span class="no">08</span><h3><span lang-ta>முசிரி</span><span lang-en>Musiri</span></h3></div>
+      <div class="const-card"><span class="no">09</span><h3><span lang-ta>துறையூர்</span><span lang-en>Thuraiyur</span></h3></div>
+    </div>
+  </div>
+</section>
+
+<section class="strip" id="activities">
+  <div class="wrap">
+    <h2>
+      <span lang-ta>மாவட்ட நடவடிக்கைகள் மற்றும் நிகழ்வுகளை பின்தொடர விரும்புகிறீர்களா?</span>
+      <span lang-en>Want to follow district activities and events?</span>
+    </h2>
+    <a href="#volunteer" class="cta-btn"><span lang-ta>தொடர்பு கொள்ளுங்கள்</span><span lang-en>Get in Touch</span></a>
+  </div>
+</section>
+
+<section class="volunteer" id="volunteer">
+  <div class="wrap vol-grid">
+    <div class="copy">
+      <span class="tag"><span lang-ta>இணையுங்கள்</span><span lang-en>Join Us</span></span>
+      <h2><span lang-ta>தன்னார்வலராக இயக்கத்தில் இணையுங்கள்</span><span lang-en>Join the movement as a volunteer</span></h2>
+      <p>
+        <span lang-ta>உங்கள் தொகுதியில் நடைபெறும் பணிகளில் பங்கேற்க, கீழே உள்ள படிவத்தை பூர்த்தி செய்யுங்கள். எங்கள் மாவட்ட குழு உங்களை விரைவில் தொடர்பு கொள்ளும்.</span>
+        <span lang-en>Fill out the form below to take part in activities happening in your constituency. Our district team will get in touch with you soon.</span>
+      </p>
+      <ul>
+        <li><span lang-ta>உங்கள் தொகுதி நடவடிக்கைகளில் நேரடியாக பங்கேற்பு</span><span lang-en>Direct participation in your constituency's activities</span></li>
+        <li><span lang-ta>சமூக ஊடக பிரசார குழுவில் இடம்</span><span lang-en>A place in the social media outreach team</span></li>
+        <li><span lang-ta>உள்ளூர் நிகழ்வுகள் குறித்த முன்னுரிமை தகவல்</span><span lang-en>Priority updates on local events</span></li>
+      </ul>
+    </div>
+    <form class="vform">
+      <div class="row">
+        <div>
+          <label for="fname"><span lang-ta>பெயர்</span><span lang-en>Name</span></label>
+          <input id="fname" type="text" required>
+        </div>
+        <div>
+          <label for="fphone"><span lang-ta>தொலைபேசி எண்</span><span lang-en>Phone Number</span></label>
+          <input id="fphone" type="tel" placeholder="98xxxxxxxx" required>
+        </div>
+      </div>
+      <div class="full">
+        <label for="fconst"><span lang-ta>தொகுதி</span><span lang-en>Constituency</span></label>
+        <select id="fconst" required>
+          <option value="" data-ta="தேர்ந்தெடுக்கவும்" data-en="Select">தேர்ந்தெடுக்கவும்</option>
+          <option data-ta="மணப்பாறை" data-en="Manapparai">மணப்பாறை</option>
+          <option data-ta="ஸ்ரீரங்கம்" data-en="Srirangam">ஸ்ரீரங்கம்</option>
+          <option data-ta="திருச்சிராப்பள்ளி மேற்கு" data-en="Tiruchirappalli West">திருச்சிராப்பள்ளி மேற்கு</option>
+          <option data-ta="திருச்சிராப்பள்ளி கிழக்கு" data-en="Tiruchirappalli East">திருச்சிராப்பள்ளி கிழக்கு</option>
+          <option data-ta="திருவெறும்பூர்" data-en="Thiruverumbur">திருவெறும்பூர்</option>
+          <option data-ta="லால்குடி" data-en="Lalgudi">லால்குடி</option>
+          <option data-ta="மணச்சநல்லூர்" data-en="Manachanallur">மணச்சநல்லூர்</option>
+          <option data-ta="முசிரி" data-en="Musiri">முசிரி</option>
+          <option data-ta="துறையூர்" data-en="Thuraiyur">துறையூர்</option>
+        </select>
+      </div>
+      <div class="full">
+        <label for="femail"><span lang-ta>மின்னஞ்சல் (விருப்பம்)</span><span lang-en>Email (optional)</span></label>
+        <input id="femail" type="email" placeholder="you@email.com">
+      </div>
+      <button type="submit"><span lang-ta>பதிவு செய்யுங்கள்</span><span lang-en>Submit</span></button>
+      <p class="note"><span lang-ta>உங்கள் தகவல்கள் மாவட்ட குழுவிடம் மட்டுமே பகிரப்படும்.</span><span lang-en>Your details will only be shared with the district team.</span></p>
+    </form>
+  </div>
+</section>
+
+
+
+<div id="footer-placeholder"></div>
+
+
+<script>
+  fetch('footer.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('footer-placeholder').innerHTML = html;
+
+      // Footer script execute
+      const scripts = document
+        .getElementById('footer-placeholder')
+        .querySelectorAll("script");
+
+      scripts.forEach(oldScript => {
+        const newScript = document.createElement("script");
+
+        if (oldScript.src) {
+          newScript.src = oldScript.src;
+        } else {
+          newScript.textContent = oldScript.textContent;
+        }
+
+        document.body.appendChild(newScript);
+        oldScript.remove();
+      });
+    })
+    .catch(err => console.error("Footer load failed:", err));
+</script>
+
+
+<script>
+fetch('navbar.html')
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById('navbar-placeholder').innerHTML = html;
+
+    // Execute navbar script manually
+    const scripts = document.getElementById('navbar-placeholder').querySelectorAll("script");
+
+    scripts.forEach(oldScript => {
+      const newScript = document.createElement("script");
+
+      if (oldScript.src) {
+        newScript.src = oldScript.src;
+      } else {
+        newScript.textContent = oldScript.textContent;
+      }
+
+      document.body.appendChild(newScript);
+      oldScript.remove();
+    });
+  })
+  .catch(err => console.error(err));
+</script>
+</body>
+</html>
